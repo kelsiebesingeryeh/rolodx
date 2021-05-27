@@ -1,0 +1,13 @@
+.googleLoginButton {
+    background: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    height: 100vh;
+}
+
+.googleLoginIcon {
+   width: 50%;
+}

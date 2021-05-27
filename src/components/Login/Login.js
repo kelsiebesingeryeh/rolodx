@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import googleIcon from "../../assets/btn_google_signin_light_normal_web@2x.png";
+import './Login.css'
 
 //refresh token
 import { refreshTokenSetup } from '../../utils/refreshToken';
@@ -10,7 +11,7 @@ const clientId = "257194673659-esbcpq0klonltdls6i9ta29hj64sahv5.apps.googleuserc
 const Login = () => {
     const onSuccess = (res) => {
         console.log('Login Success: currentUser:', res.profileObj);
-        alert(`Logged in successfully welcome ${res.profileObj.name}. \n See console for full profile object.`);
+        // alert(`Logged in successfully welcome ${res.profileObj.name}. \n See console for full profile object.`);
         refreshTokenSetup(res);
     };
 
@@ -29,8 +30,8 @@ const Login = () => {
 
     return (
       <div>
-        <button onClick={signIn}>
-          <img src={googleIcon} alt="google login" className="icon" />
+        <button onClick={signIn} className='googleLoginButton'>
+          <img src={googleIcon} alt="google login" className="googleLoginIcon" />
         </button>
       </div>
     );

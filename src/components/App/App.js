@@ -3,11 +3,11 @@ import Logout from '../Logout/Logout';
 
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Login />
-      <Logout />
+      {/* <Logout /> */}
     </div>
   );
 }
