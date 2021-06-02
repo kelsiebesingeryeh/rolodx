@@ -3,17 +3,6 @@ import sampleData from "../../data/sampleData";
 import { DataGrid } from "@material-ui/data-grid";
 import ContactList from './ContactList/ContactList';
 
-const columns = [
-    { field: "id", headerName: "Full Name" },
-    { field: "email", headerName: "Email" },
-    { field: "phone", headerName: "Phone" },
-    { field: "birthday", headerName: "Birthday" },
-    { field: "date of last outreach", headerName: "Date of last outreach" },
-    { field: "company", headerName: "Company" },
-    { field: "position", headerName: "Position" },
-    { field: "notes", headerName: "Notes" },
-];
-
 const Contact = () => {
     console.log(sampleData);
     const [contacts, setContacts] = useState([]);
