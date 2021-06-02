@@ -15,7 +15,7 @@ const sampleData = [
     email: "selwynyeh@gmail.com",
     phone: "310-988-5508",
     birthday: "January 9",
-    "date of last outreach": "6/22021",
+    "date of last outreach": "6/2/2021",
     company: "Workiva",
     position: "Customer Success Team Manager",
     social: "tbd",

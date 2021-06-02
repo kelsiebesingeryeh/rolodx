@@ -36,17 +36,15 @@ const Contact = () => {
     }, [])
 
     const rows = contacts.map(contact => {
-        return (
-            {
-                outreachdate: contact.outreachdate,
-                id: contact.name, 
-                position: contact.position,
-                company: contact.company,
-                email: contact.email,
-                phone: contact.phone,
-                birthday: contact.birthday
-            }
-        )
+        return {
+          outreachdate: contact["date of last outreach"],
+          id: contact.name,
+          position: contact.position,
+          company: contact.company,
+          email: contact.email,
+          phone: contact.phone,
+          birthday: contact.birthday,
+        };
     })
     
     return (
