@@ -1,38 +1,76 @@
 import React, { useState, useEffect } from 'react';
 import sampleData from "../../data/sampleData";
-import { DataGrid } from "@material-ui/data-grid";
 import ContactList from './ContactList/ContactList';
+import { DataGrid } from "@material-ui/data-grid";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  dataGrid: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    width: "1200px",
+    margin: 'auto'
+  },
+});
+const columns = [
+  { field: "outreachdate", headerName: "Date of last outreach", width: 210 },
+  { field: "id", headerName: "Full Name", width: 150 },
+  { field: "position", headerName: "Position", width: 180 },
+  { field: "company", headerName: "Company", width: 150 },
+  { field: "email", headerName: "Email", width: 200 },
+  { field: "phone", headerName: "Phone", width: 150 },
+  { field: "birthday", headerName: "Birthday", width: 150 },
+];
 
 const Contact = () => {
-    console.log(sampleData);
     const [contacts, setContacts] = useState([]);
+    const classes = useStyles();
 
     useEffect(() => {
         setContacts(sampleData);
     }, [])
 
-    const contactsOnDisplay = contacts.map(contact => {
+    const rows = contacts.map(contact => {
         return (
-            <ContactList 
-            key={contact.name}
-            name={contact.name}
-            email={contact.email}
-            phone={contact.phone}
-            birthday={contact.birthday}
-            outreachdate={contact['date of last outreach']}
-            company={contact.company}
-            position={contact.position}
-            notes={contact.notes}
-            />
+            {
+                outreachdate: contact.outreachdate,
+                id: contact.name, 
+                position: contact.position,
+                company: contact.company,
+                email: contact.email,
+                phone: contact.phone,
+                birthday: contact.birthday
+            }
         )
     })
     
     return (
         <>
         <h1>Contacts</h1>
-        {contactsOnDisplay}
+        <DataGrid
+              columns={columns}
+              rows={rows}
+              autoHeight={true}
+              className={classes.dataGrid}
+            />
         </>
     )
 }
 
 export default Contact;
+
+
+
+// const ContactList = ({ name, email, phone, birthday, outreachdate, company, position}) => {
+//     
+    
+// }
+
+// export default ContactList;
+
+// filter model? filter by company or position
