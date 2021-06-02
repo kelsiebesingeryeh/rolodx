@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from '../Login/Login';
 import Logout from '../Logout/Logout';
+import Contact from '../Contact/Contact';
 
 import './App.css';
 
@@ -18,7 +19,12 @@ const App = () => {
   return (
     <div className="App">
       {!isSignedIn && <Login successfulSignIn={successfulSignIn} />}
-      {isSignedIn && <Logout logOut={logOut} />}
+      {isSignedIn && 
+      <>
+        <Logout logOut={logOut} />
+        <Contact />
+      </>
+      }
     </div>
   );
 }

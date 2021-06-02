@@ -1,7 +1,6 @@
 const sampleData = [
     {
-        "first name": "Kelsie",
-        "last name": "Besinger",
+        "name": "Kelsie Besinger",
         "email": "kelsiebesinger@gmail.com",
         "phone": "646-246-7341",
         "birthday": "June, 5, 1990",
@@ -11,5 +10,7 @@ const sampleData = [
         "notes": "TBD",
         "social": "tbd",
         "actions": "tbd"
-    }
+    },
 ]
+
+export default sampleData;
